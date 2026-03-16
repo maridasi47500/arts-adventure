@@ -1,36 +1,43 @@
-# arts-adventure
-the adventure of art
+🎨 arts-adventure
+The adventure of art — Explorer les modes de présence en ligne
+
 📘 README — Deux modes d’activité sur les réseaux sociaux
 
-Ce projet décrit deux profils d’utilisateurs (ou deux modes de publication) sur les réseaux sociaux, ainsi que leur relation avec les entreprises, les offres d’emploi et les événements accessibles en ligne.
+Ce projet explore deux manières d’exister sur les réseaux sociaux :
+
+    un mode visible, très actif, proche d’une identité publique ou d’une marque personnelle ;
+
+    un mode discret, plus courant, centré sur les opportunités professionnelles.
+
+Il met également en lumière la relation entre ces comportements et l’accès aux entreprises, aux offres d’emploi et aux événements en ligne.
 👤 Profil 1 — L’utilisateur très visible
 
-Ce premier type d’utilisateur adopte une présence fortement active et publique sur les réseaux sociaux.
+Ce premier profil adopte une présence forte, assumée et régulière sur les réseaux sociaux.
 🔎 Caractéristiques principales
 
-    Publie régulièrement du contenu personnel.
+    Publie fréquemment du contenu personnel.
 
     Montre son visage, sa voix, parfois des vidéos.
 
-    Partage des moments de vie comme sur Facebook, Instagram, TikTok, etc.
+    Partage des moments de vie (style Facebook, Instagram, TikTok…).
 
-    Interagit directement avec des entreprises mentionnées dans ses publications.
+    Interagit directement avec les entreprises mentionnées dans ses publications.
 
     Utilise les réseaux sociaux comme un espace d’expression personnelle.
 
 🧭 Objectif
 
-Créer une présence visible, identifiable, presque “marque personnelle”.
+Construire une présence visible, identifiable, presque une marque personnelle.
 👤 Profil 2 — L’utilisateur discret
 
-Le second type d’utilisateur adopte une approche beaucoup plus silencieuse et statistiquement courante, similaire à la majorité des internautes.
+Ce second profil correspond à la majorité silencieuse des internautes : présent, mais rarement exposé.
 🔎 Caractéristiques principales
 
-    Publie très rarement.
+    Publie très peu.
 
-    Commente parfois, mais reste globalement discret et inaperçu.
+    Commente occasionnellement, mais reste globalement invisible.
 
-    Ne publie que lorsqu’il y a un motif professionnel, par exemple :
+    Ne publie que lorsqu’un motif professionnel le justifie, par exemple :
 
         une entreprise,
 
@@ -38,50 +45,31 @@ Le second type d’utilisateur adopte une approche beaucoup plus silencieuse et 
 
         un événement pertinent.
 
-    Fonctionne comme un “mode automatique” basé sur des opportunités détectées (ex. base de données d’événements ou d’offres d’emploi).
+    Fonctionne comme un “mode automatique” basé sur des opportunités détectées (ex. : base de données d’événements ou d’offres d’emploi).
 
 🧭 Objectif
 
 Rester présent sans s’exposer, tout en profitant des opportunités professionnelles.
 🌍 Accès aux offres d’emploi dans le monde entier
 
-Les deux profils peuvent accéder aux offres d’emploi via :
+Les deux profils peuvent accéder aux opportunités professionnelles via :
 
-    Les pages “Jobs”, “Careers” ou “Carrières” des sites web d’entreprises.
+    Les pages Jobs, Careers ou Carrières des sites d’entreprises.
 
     Les comptes officiels des entreprises sur les réseaux sociaux.
 
     Les plateformes professionnelles (LinkedIn, X/Twitter, etc.).
 
-Ce projet met en avant comment un utilisateur discret (Profil 2) peut publier uniquement lorsqu’une entreprise ou une opportunité pertinente apparaît, par exemple :
+🎯 But du projet
 
-    Une nouvelle offre d’emploi.
+Ce projet montre comment un utilisateur discret peut, malgré une faible activité publique, accéder à un large éventail d’opportunités professionnelles grâce à une stratégie d’observation, de veille et d’interaction ciblée.
 
-    Un événement professionnel.
+Si tu veux, je peux aussi :
 
-    Une annonce officielle d’une entreprise suivie.
+    créer une version anglaise,
 
-🗂️ Base de données d’événements et de publications
+    ajouter une section “installation / usage”,
 
-Le système peut intégrer une base de données contenant :
+    transformer ce README en version plus technique (GitHub‑friendly),
 
-    Événements professionnels
-
-    Offres d’emploi
-
-    Actualités d’entreprises
-
-    Opportunités de publication
-
-Lorsque le Profil 2 détecte un élément pertinent, il peut alors publier automatiquement ou semi-automatiquement sur les réseaux sociaux.
-🎯 Objectif du projet
-
-Ce dépôt vise à :
-
-    Décrire deux comportements sociaux distincts.
-
-    Illustrer comment les réseaux sociaux peuvent être utilisés différemment selon les objectifs.
-
-    Montrer comment un utilisateur discret peut rester informé et actif sans exposition excessive.
-
-    Explorer l’automatisation ou la semi-automatisation des publications liées aux entreprises.
+    ou lui donner un ton plus artistique pour coller au nom arts‑adventure.
