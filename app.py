@@ -30,23 +30,114 @@ def add_one_user():
     if request.method == 'POST':
 
         the_username = "anonyme"
-        one_user = query_db("insert into user (username,country_id,phone,email,profile_mode) values (:username,:country_id,:phone,:email,:profile_mode)",request.form)
+        one_user = query_db("insert into user (email,username,date_joined,name,country_id,phone,dateofbirth) values (:email,:username,:date_joined,:name,:country_id,:phone,:dateofbirth)",request.form)
         user = query_db('select * from user')
         return render_template("userform.html", users=user, one_user=one_user, the_title="add new user")
     user = query_db('select * from user')
     one_user = query_db("select * from user limit 1", one=True)
     return render_template("userform.html", users=user, one_user=one_user, the_title="add new user")
 
-@app.route("/add_one_photos", methods=["GET","POST"])
-def add_one_photos():
+@app.route("/add_one_profile_image", methods=["GET","POST"])
+def add_one_profile_image():
 
     if request.method == 'POST':
 
         the_username = "anonyme"
-        one_user = query_db("insert into photos (user_id,myphoto) values (:user_id,:myphoto)",request.form)
-        user = query_db('select * from photos')
-        return render_template("photosform.html", photoss=user, one_user=one_user, the_title="add new photos")
-    user = query_db('select * from photos')
-    one_user = query_db("select * from photos limit 1", one=True)
-    return render_template("photosform.html", photoss=user, one_user=one_user, the_title="add new photos")
+        one_user = query_db("insert into profile_image (user_id,pic) values (:user_id,:pic)",request.form)
+        user = query_db('select * from profile_image')
+        return render_template("profile_imageform.html", profile_images=user, one_user=one_user, the_title="add new profile_image")
+    user = query_db('select * from profile_image')
+    one_user = query_db("select * from profile_image limit 1", one=True)
+    return render_template("profile_imageform.html", profile_images=user, one_user=one_user, the_title="add new profile_image")
+
+@app.route("/add_one_people_photos", methods=["GET","POST"])
+def add_one_people_photos():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into people_photos (profile_image_id,personsname) values (:profile_image_id,:personsname)",request.form)
+        user = query_db('select * from people_photos')
+        return render_template("people_photosform.html", people_photoss=user, one_user=one_user, the_title="add new people_photos")
+    user = query_db('select * from people_photos')
+    one_user = query_db("select * from people_photos limit 1", one=True)
+    return render_template("people_photosform.html", people_photoss=user, one_user=one_user, the_title="add new people_photos")
+
+@app.route("/add_one_user_video", methods=["GET","POST"])
+def add_one_user_video():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into user_video (user_id,vid) values (:user_id,:vid)",request.form)
+        user = query_db('select * from user_video')
+        return render_template("user_videoform.html", user_videos=user, one_user=one_user, the_title="add new user_video")
+    user = query_db('select * from user_video')
+    one_user = query_db("select * from user_video limit 1", one=True)
+    return render_template("user_videoform.html", user_videos=user, one_user=one_user, the_title="add new user_video")
+
+@app.route("/add_one_radio_voice", methods=["GET","POST"])
+def add_one_radio_voice():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into radio_voice (user_id,recording) values (:user_id,:recording)",request.form)
+        user = query_db('select * from radio_voice')
+        return render_template("radio_voiceform.html", radio_voices=user, one_user=one_user, the_title="add new radio_voice")
+    user = query_db('select * from radio_voice')
+    one_user = query_db("select * from radio_voice limit 1", one=True)
+    return render_template("radio_voiceform.html", radio_voices=user, one_user=one_user, the_title="add new radio_voice")
+
+@app.route("/add_one_subscriber", methods=["GET","POST"])
+def add_one_subscriber():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into subscriber (user_id,subscriber_id) values (:user_id,:subscriber_id)",request.form)
+        user = query_db('select * from subscriber')
+        return render_template("subscriberform.html", subscribers=user, one_user=one_user, the_title="add new subscriber")
+    user = query_db('select * from subscriber')
+    one_user = query_db("select * from subscriber limit 1", one=True)
+    return render_template("subscriberform.html", subscribers=user, one_user=one_user, the_title="add new subscriber")
+
+@app.route("/add_one_comment_photo", methods=["GET","POST"])
+def add_one_comment_photo():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into comment_photo (profile_image_id,user_id,content) values (:profile_image_id,:user_id,:content)",request.form)
+        user = query_db('select * from comment_photo')
+        return render_template("comment_photoform.html", comment_photos=user, one_user=one_user, the_title="add new comment_photo")
+    user = query_db('select * from comment_photo')
+    one_user = query_db("select * from comment_photo limit 1", one=True)
+    return render_template("comment_photoform.html", comment_photos=user, one_user=one_user, the_title="add new comment_photo")
+
+@app.route("/add_one_posts", methods=["GET","POST"])
+def add_one_posts():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into posts (user_id,content) values (:user_id,:content)",request.form)
+        user = query_db('select * from posts')
+        return render_template("postsform.html", postss=user, one_user=one_user, the_title="add new posts")
+    user = query_db('select * from posts')
+    one_user = query_db("select * from posts limit 1", one=True)
+    return render_template("postsform.html", postss=user, one_user=one_user, the_title="add new posts")
+
+@app.route("/add_one_country", methods=["GET","POST"])
+def add_one_country():
+
+    if request.method == 'POST':
+
+        the_username = "anonyme"
+        one_user = query_db("insert into country (name) values (:name)",request.form)
+        user = query_db('select * from country')
+        return render_template("countryform.html", countrys=user, one_user=one_user, the_title="add new country")
+    user = query_db('select * from country')
+    one_user = query_db("select * from country limit 1", one=True)
+    return render_template("countryform.html", countrys=user, one_user=one_user, the_title="add new country")
 

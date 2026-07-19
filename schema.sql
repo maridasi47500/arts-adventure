@@ -28,14 +28,51 @@ INSERT OR IGNORE INTO contacts (contact_id, first_name, last_name, email, phone)
 VALUES( '2', 'anne onim', 'onim', 'anne.onim@email.com', '+86877779898');
 create table if not exists user(
         id integer primary key autoincrement,
-        username text,
+        email text,
+            username text,
+            date_joined text,
+            name text,
             country_id text,
             phone text,
-            email text,
-            profile_mode text
+            dateofbirth text
                     );
-create table if not exists photos(
+create table if not exists profile_image(
         id integer primary key autoincrement,
         user_id text,
-            myphoto text
+            pic text
+                    );
+create table if not exists people_photos(
+        id integer primary key autoincrement,
+        profile_image_id text,
+            personsname text
+                    );
+create table if not exists user_video(
+        id integer primary key autoincrement,
+        user_id text,
+            vid text
+                    );
+create table if not exists radio_voice(
+        id integer primary key autoincrement,
+        user_id text,
+            recording text
+                    );
+create table if not exists subscriber(
+        id integer primary key autoincrement,
+        user_id text,
+            subscriber_id text
+                    );
+create table if not exists comment_photo(
+        id integer primary key autoincrement,
+        profile_image_id text,
+            user_id text,
+            content text
+                    );
+create table if not exists posts(
+        id integer primary key autoincrement,
+        user_id text,
+            content text
+                    );
+create table if not exists country(
+        id integer primary key autoincrement,
+        name text
                     );
