@@ -190,7 +190,7 @@ def login():
        print(request.form)
        session['username'] = request.form['username']
        print("bug")
-       if x.length > 0:
+       if length(x) > 0:
            return redirect("/?loggedin=true")
 
    return '''
