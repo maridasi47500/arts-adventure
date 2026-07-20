@@ -152,17 +152,14 @@ def add_one_country():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
    print("11")
+   x=query_db("select * from user where username = ? and password = ?", [request.form['username'],request.form['password']])
+   print(x)
    if request.method == 'POST':
        print("dsg")
        print(request.form)
-       if request.form["password"] == request.form["password_confirmation"]:
-           x=query_db("insert into user (email, username, password, country_id, phone, dateofbirth) values (:email, :username, :password, :country_id, :phone, :dateofbirth)", request.form)
-           print(x)
-           y=query_db("select * from user where username = ? and password = ?", [request.form['username'],request.form['password']])
-           print(y)
        session['username'] = request.form['username']
        print("bug")
-       return redirect("/?loggedin=true")
+       redirect("/?loggedin=true")
 
    return '''
 
@@ -170,10 +167,6 @@ def register():
       <p><label for="">email</label><input type=email name="email"/></p>
       <p><label for="">name</label><input type = text name = "username"/></p>
       <p><label for="">password</label><input type = password name = "password"/></p>
-      <p><label for="">password confirmation</label><input type = password name = "password_confirmation"/></p>
-      <p><label for="">country</label><input type = text name = "country_id"/></p>
-      <p><label for="">phone</label><input type =telephone name = "phone"/></p>
-      <p><label for="">date of birth</label><input type=date name = "dateofbirth"/></p>
       <p><input type="submit" value="Register"/></p>
    </form>
 '''
@@ -184,15 +177,19 @@ def login():
    if request.method == 'POST':
        x=query_db("select * from user where username = ? and password = ?", [request.form['username'],request.form['password']])
        print(x)
-
-
        print("dsg")
        print(request.form)
        session['username'] = request.form['username']
        print("bug")
-       if x.length > 0:
-           return redirect("/?loggedin=true")
 
+       return '''
+        ok !!
+       <form action="/login" method="post">
+          <p><label for="">name</label><input type = text name = username/></p>
+          <p><input type = password name = password/></p>
+          <p><input type="submit" value="Login"/></p>
+       </form>
+       '''
    return '''
 
    <form action="/login" method="post">
