@@ -174,6 +174,7 @@ def register():
       <p><label for="">country</label><input type = text name = "country_id"/></p>
       <p><label for="">phone</label><input type =telephone name = "phone"/></p>
       <p><label for="">date of birth</label><input type=date name = "dateofbirth"/></p>
+      <p><label for="">would you like to become</label><select name="become"><input value="famous">famous</option><option value="unknown">unknown</option></select></p>
       <p><input type="submit" value="Register"/></p>
    </form>
 '''

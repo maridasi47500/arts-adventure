@@ -7,6 +7,7 @@ create table if not exists user(
             name text,
             country_id text,
             phone text,
+            become text,
             dateofbirth text
                     );
 create table if not exists profile_image(
