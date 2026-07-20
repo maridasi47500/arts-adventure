@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
 {% block montitre %}
+
 debut de mes mots: bienvenue dans lapplication 2 PROFILES
 {% endblock %}
 {% block content %}
 <h1># arts-adventure</h1>
+{% if signedin == "true" %}
+<p>vous êtes bien connecté(e), {{ username }}</p>
+{% endif %}
+{% if registered == "true" %}
+<p>vous êtes bien inscrit(e), {{ username }}</p>
+{% endif %}
 {% for x in users | reverse %}
  <li>{{ x["first_name"]  }}</li>
 

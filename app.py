@@ -28,10 +28,22 @@ def close_connection(exception):
 @app.route("/")
 def hello_world():
     user = query_db('select * from user')
+    try:
+        registered=request.args.get("registered")
+    except:
+        registered="false"
+    try:
+        signedin=request.args.get("signedin")
+    except:
+        signedin="false"
+    try:
+        username=session["username"]
+    except:
+        username=""
     the_username = "anonyme"
     one_user = query_db('select * from user where username = ?',
                 [the_username], one=True)
-    return render_template("hey.html", users=user, one_user=one_user, the_title="my title")
+    return render_template("hey.html", users=user, one_user=one_user, the_title="my title",signedin=signedin,registered=registered,username=username)
 @app.route("/add_one_user", methods=["GET","POST"])
 def add_one_user():
 
@@ -162,7 +174,7 @@ def register():
            print(y)
        session['username'] = request.form['username']
        print("bug")
-       return redirect("/?loggedin=true")
+       return redirect("/?registered=true")
 
    return '''
 
@@ -174,7 +186,7 @@ def register():
       <p><label for="">country</label><input type = text name = "country_id"/></p>
       <p><label for="">phone</label><input type =telephone name = "phone"/></p>
       <p><label for="">date of birth</label><input type=date name = "dateofbirth"/></p>
-      <p><label for="">would you like to become</label><select name="become"><input value="famous">famous</option><option value="unknown">unknown</option></select></p>
+      <p><label for="">would you like to become</label><select name="become"><option value="famous">famous</option><option value="unknown">unknown</option></select></p>
       <p><input type="submit" value="Register"/></p>
    </form>
 '''
